@@ -173,13 +173,12 @@ for i in range(9):
 
 #####################################
 
-def run(screen=None):
-
+def game_run(screen=None):
     if not screen:
-
         pygame.init()
         screen = pygame.display.set_mode((720, 720))
     main_loop(screen)
+
 
 def main_loop(screen):
     global score
@@ -208,14 +207,15 @@ def main_loop(screen):
             score += 0.009
 
         hits = pygame.sprite.spritecollide(farmer, all_obsatcles, False)
-        for eac in hits:
+        if hits:
             score = 0
-            Menu.menu_run()
+            Menu.run()
 
         text_print(str(int(score)), 30, 30, (34, 35, 35))
 
         pygame.display.update()
         clock.tick(60)
 
+
 if __name__ == '__main__':
-    Menu.menu_run()
+    Menu.run()
