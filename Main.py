@@ -148,7 +148,7 @@ def text_print(message, font_size, y, color):
 
 def respawn():
 
-    for i in range(9):
+    for i in range(1):
         obs = Obstecles()
         all_obsatcles.add(obs)
         all_sprites.add(obs)
@@ -218,6 +218,7 @@ def main_loop(screen):
         if hits:
             score = 0
             pygame.time.delay(1000)
+            respawn()
             running = False
 
         text_print(str(int(score)), 30, 30, (34, 35, 35))
