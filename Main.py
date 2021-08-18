@@ -217,6 +217,7 @@ def main_loop(screen):
         hits = pygame.sprite.spritecollide(farmer, all_obsatcles, True)
         if hits:
             score = 0
+            pygame.time.delay(1000)
             running = False
 
         text_print(str(int(score)), 30, 30, (34, 35, 35))
